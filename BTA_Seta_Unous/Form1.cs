@@ -67,6 +67,7 @@ namespace BTA_Seta_Unous
         {
             try
             {
+                dtpDate01.Value = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
                 BLL.Config_Sessao.carregarConfig(Directory.GetCurrentDirectory());
             }
             catch (Exception)
@@ -84,11 +85,11 @@ namespace BTA_Seta_Unous
             {
                 var tokenOut = await BLL.Token.retornaToken();
                 
-                var products = await DAL.Products.retornaProducts(BLL.Config_Sessao.config);
+                var products = await DAL.Products.retornaProducts(BLL.Config_Sessao.config, dtpDate01.Value, dtpDate02.Value);
 
                 for (int i=0; i < products.Count; i++)
                 {
-                    var products_Send = new  List<DTO.Product_In>();
+                    var products_Send = new  List<DTO.Product>();
 
                     for (int j=0; j < qtde_Registros; j++)
                     {
@@ -152,6 +153,82 @@ namespace BTA_Seta_Unous
                 //File.WriteAllText(@"c:\bta\products_out.json", Newtonsoft.Json.JsonConvert.SerializeObject(resposta, Formatting.Indented));
 
                 MessageBox.Show("Test");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private async void btnSuppliers_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var tokenOut = await BLL.Token.retornaToken();
+
+                var suppliers = await DAL.Suppliers.retornaSuppliers(BLL.Config_Sessao.config, dtpDate01.Value, dtpDate02.Value);
+
+                File.WriteAllText(@"c:\bta\suppliers.json", JsonConvert.SerializeObject(suppliers, Formatting.Indented));
+
+                //File.WriteAllText(@"c:\bta\locations.json", JsonConvert.SerializeObject(locations, Formatting.Indented));
+
+                var resposta = await BLL.Suppliers.enviarSuppliers(tokenOut.access_token, suppliers);
+
+                if (resposta.statusDescription != "OK")
+                {
+                    MessageBox.Show(resposta.responseFromServer, resposta.statusDescription, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    dynamic objResp = JsonConvert.DeserializeObject(resposta.responseFromServer);
+
+                    MessageBox.Show(objResp.message.ToString(), objResp.statusReply.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    //if (Convert.ToInt32(objResp.statusReply) != 0)
+                    //{
+                    //    
+                    //}
+                }
+
+                //File.WriteAllText(@"c:\bta\products_out.json", Newtonsoft.Json.JsonConvert.SerializeObject(resposta, Formatting.Indented));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private async void btnOpenOrders_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var tokenOut = await BLL.Token.retornaToken();
+
+                var openOrders = await DAL.OpenOrders.retornaOpenOrders(BLL.Config_Sessao.config);
+
+                File.WriteAllText(@"c:\bta\openOrders.json", 
+                    JsonConvert.SerializeObject
+                    (
+                        openOrders,
+                        Formatting.Indented,
+                        new JsonSerializerSettings
+                        {
+                            NullValueHandling = NullValueHandling.Ignore
+                        }
+                    ));
+
+                var resposta = await BLL.OpenOrders.enviarOpenOrders(tokenOut.access_token, openOrders);
+                
+                if (resposta.statusDescription != "OK")
+                {
+                    MessageBox.Show(resposta.responseFromServer, resposta.statusDescription, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    dynamic objResp = JsonConvert.DeserializeObject(resposta.responseFromServer);
+                
+                    MessageBox.Show(objResp.message.ToString(), objResp.statusReply.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             catch (Exception ex)
             {

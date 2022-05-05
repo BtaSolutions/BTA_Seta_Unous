@@ -253,11 +253,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\denne\\Documents\\BTA_Seta_Unous\\BTA_Seta_Unous\\BTA_Seta_Unous.csproj",
+      "projectUniqueName": "C:\\BTASolutions\\BTA_Seta_Unous\\BTA_Seta_Unous\\BTA_Seta_Unous.csproj",
       "projectName": "BTA_Seta_Unous",
-      "projectPath": "C:\\Users\\denne\\Documents\\BTA_Seta_Unous\\BTA_Seta_Unous\\BTA_Seta_Unous.csproj",
+      "projectPath": "C:\\BTASolutions\\BTA_Seta_Unous\\BTA_Seta_Unous\\BTA_Seta_Unous.csproj",
       "packagesPath": "C:\\Users\\denne\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\denne\\Documents\\BTA_Seta_Unous\\BTA_Seta_Unous\\obj\\",
+      "outputPath": "C:\\BTASolutions\\BTA_Seta_Unous\\BTA_Seta_Unous\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -281,14 +281,14 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "C:\\Users\\denne\\Documents\\BTA_Seta_Unous\\BLL\\BLL.csproj": {
-              "projectPath": "C:\\Users\\denne\\Documents\\BTA_Seta_Unous\\BLL\\BLL.csproj"
+            "C:\\BTASolutions\\BTA_Seta_Unous\\BLL\\BLL.csproj": {
+              "projectPath": "C:\\BTASolutions\\BTA_Seta_Unous\\BLL\\BLL.csproj"
             },
-            "C:\\Users\\denne\\Documents\\BTA_Seta_Unous\\DAL\\DAL.csproj": {
-              "projectPath": "C:\\Users\\denne\\Documents\\BTA_Seta_Unous\\DAL\\DAL.csproj"
+            "C:\\BTASolutions\\BTA_Seta_Unous\\DAL\\DAL.csproj": {
+              "projectPath": "C:\\BTASolutions\\BTA_Seta_Unous\\DAL\\DAL.csproj"
             },
-            "C:\\Users\\denne\\Documents\\BTA_Seta_Unous\\DTO\\DTO.csproj": {
-              "projectPath": "C:\\Users\\denne\\Documents\\BTA_Seta_Unous\\DTO\\DTO.csproj"
+            "C:\\BTASolutions\\BTA_Seta_Unous\\DTO\\DTO.csproj": {
+              "projectPath": "C:\\BTASolutions\\BTA_Seta_Unous\\DTO\\DTO.csproj"
             }
           }
         }

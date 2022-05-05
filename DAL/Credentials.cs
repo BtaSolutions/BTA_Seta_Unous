@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class Locations
+    public class Credentials
     {
-        public static async Task<List<DTO.Location>> retornaLocations(DTO.Config config)
+        public static DTO.Token retornaCredenciais(DTO.Config config)
         {
             NpgsqlConnection psqlConn = new NpgsqlConnection("" +
-                 "Server=" + config.server +
-                 ";Port=" + config.port +
-                 ";User Id=" + config.user +
-                 ";Password=" + config.password +
-                 ";Database=" + config.database +
+                 "Server="      + config.server +
+                 ";Port="       + config.port +
+                 ";User Id="    + config.user +
+                 ";Password="   + config.password +
+                 ";Database="   + config.database +
                  ";CommandTimeout=5000 " +
                  //";Timeout=1024 " +
                  //";KeepAlive = 10000" +
@@ -24,23 +24,19 @@ namespace DAL
 
             try
             {
-                var objs = new List<DTO.Location>();
+                var obj = new DTO.Token();
 
-                await psqlConn.OpenAsync();
+                psqlConn.Open();
 
                 NpgsqlCommand cmd = new NpgsqlCommand(" select " +
                                                         " * " +
-                                                        " from unous_locations " +
-                                                        " " +
-                                                        " order by 2 desc " +
-                                                        "  ", psqlConn);
+                                                        " from unous_credentials() " +
+                                                        " order by 1 ", psqlConn);
 
-                NpgsqlDataReader dr = await cmd.ExecuteReaderAsync();
+                NpgsqlDataReader dr = cmd.ExecuteReader();
 
-                while (await dr.ReadAsync())
+                while (dr.Read())
                 {
-                    var obj = new DTO.Location();
-
                     System.Reflection.PropertyInfo[] p = obj.GetType().GetProperties();
 
                     for (int i = 0; i < dr.FieldCount; i++)
@@ -60,11 +56,9 @@ namespace DAL
                             }
                         }
                     }
-
-                    objs.Add(obj);
                 }
 
-                return objs;
+                return obj;
             }
             catch (Exception)
             {
@@ -72,7 +66,7 @@ namespace DAL
             }
             finally
             {
-                await psqlConn.CloseAsync();
+                psqlConn.Close();
             }
         }
     }

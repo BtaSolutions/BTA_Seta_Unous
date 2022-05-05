@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class unous_Credentials
+    public class Suppliers
     {
-        public static DTO.Token_In retornaCredenciais(DTO.Config config)
+        public static async Task<List<DTO.Supplier>> retornaSuppliers(DTO.Config config, DateTime date01, DateTime date02)
         {
             NpgsqlConnection psqlConn = new NpgsqlConnection("" +
-                 "Server="      + config.server +
-                 ";Port="       + config.port +
-                 ";User Id="    + config.user +
-                 ";Password="   + config.password +
-                 ";Database="   + config.database +
+                 "Server=" + config.server +
+                 ";Port=" + config.port +
+                 ";User Id=" + config.user +
+                 ";Password=" + config.password +
+                 ";Database=" + config.database +
                  ";CommandTimeout=5000 " +
                  //";Timeout=1024 " +
                  //";KeepAlive = 10000" +
@@ -24,19 +24,26 @@ namespace DAL
 
             try
             {
-                var obj = new DTO.Token_In();
+                var objs = new List<DTO.Supplier>();
 
-                psqlConn.Open();
+                await psqlConn.OpenAsync();
 
                 NpgsqlCommand cmd = new NpgsqlCommand(" select " +
                                                         " * " +
-                                                        " from unous_credentials " +
-                                                        " order by 1 ", psqlConn);
+                                                        " from unous_suppliers(@date01::date, @date02::date) " +
+                                                        " " +
+                                                        " order by 2 desc " +
+                                                        "  ", psqlConn);
 
-                NpgsqlDataReader dr = cmd.ExecuteReader();
+                cmd.Parameters.AddWithValue("@date01", date01);
+                cmd.Parameters.AddWithValue("@date02", date02);
 
-                while (dr.Read())
+                NpgsqlDataReader dr = await cmd.ExecuteReaderAsync();
+
+                while (await dr.ReadAsync())
                 {
+                    var obj = new DTO.Supplier();
+
                     System.Reflection.PropertyInfo[] p = obj.GetType().GetProperties();
 
                     for (int i = 0; i < dr.FieldCount; i++)
@@ -56,9 +63,11 @@ namespace DAL
                             }
                         }
                     }
+
+                    objs.Add(obj);
                 }
 
-                return obj;
+                return objs;
             }
             catch (Exception)
             {
@@ -66,7 +75,7 @@ namespace DAL
             }
             finally
             {
-                psqlConn.Close();
+                await psqlConn.CloseAsync();
             }
         }
     }

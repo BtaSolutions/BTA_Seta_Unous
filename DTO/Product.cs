@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class Product_In
+    public class Product
     {
         //[JsonProperty("$id")]
         //public string Id { get; set; }

@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class Locations
+    public class OpenOrders
     {
-        public static async Task<List<DTO.Location>> retornaLocations(DTO.Config config)
+        public static async Task<List<DTO.OpenOrder>> retornaOpenOrders(DTO.Config config)
         {
             NpgsqlConnection psqlConn = new NpgsqlConnection("" +
                  "Server=" + config.server +
@@ -24,22 +24,22 @@ namespace DAL
 
             try
             {
-                var objs = new List<DTO.Location>();
+                var objs = new List<DTO.OpenOrder>();
 
                 await psqlConn.OpenAsync();
 
                 NpgsqlCommand cmd = new NpgsqlCommand(" select " +
                                                         " * " +
-                                                        " from unous_locations " +
+                                                        " from unous_openorders() " +
                                                         " " +
-                                                        " order by 2 desc " +
+                                                        " order by 3 " +
                                                         "  ", psqlConn);
 
                 NpgsqlDataReader dr = await cmd.ExecuteReaderAsync();
 
                 while (await dr.ReadAsync())
                 {
-                    var obj = new DTO.Location();
+                    var obj = new DTO.OpenOrder();
 
                     System.Reflection.PropertyInfo[] p = obj.GetType().GetProperties();
 

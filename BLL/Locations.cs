@@ -11,7 +11,7 @@ namespace BLL
 {
     public class Locations
     {
-        public static async Task<DTO.Response_API> enviarLocations(string token, List<DTO.Location_In> locations)
+        public static async Task<DTO.Response_API> enviarLocations(string token, List<DTO.Location> locations)
         {
             try
             {

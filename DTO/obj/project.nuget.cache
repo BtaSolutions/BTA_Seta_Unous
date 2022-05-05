@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XdmQeqXlydA5NuaNE4IaX3xldxly8dJnAVDZem45QiB/IV/7a+XknqKrelbL7bKbX1CzClEOWxxuXyoPEt3Fwg==",
+  "dgSpecHash": "4awbVIv3iDTvGL3oKfjeAqqHgSDgp6rQmYH1RdwyQqQ/rFv5BKYbxAuLa+iU/EzxQXm8p+q55FqMsWdB7U2Zmg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\denne\\Documents\\BTA_Seta_Unous\\DTO\\DTO.csproj",
+  "projectFilePath": "C:\\BTASolutions\\BTA_Seta_Unous\\DTO\\DTO.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\denne\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],

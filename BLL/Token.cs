@@ -23,7 +23,7 @@ namespace BLL
                 
                 request.AddHeader("Content-Type", "application/x-www-form-urlencoded");
 
-                var unous_credentials = DAL.unous_Credentials.retornaCredenciais(Config_Sessao.config);
+                var unous_credentials = DAL.Credentials.retornaCredenciais(Config_Sessao.config);
 
                 request.AddParameter("grant_type",  unous_credentials.grant_type);
                 request.AddParameter("username",    unous_credentials.username);

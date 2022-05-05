@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class Location_In
+    public class Location
     {
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public int id { get; set; }

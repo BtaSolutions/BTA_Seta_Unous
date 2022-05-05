@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class Token_In
+    public class Token
     {
         public string grant_type { get; set; }
         public string username { get; set; }

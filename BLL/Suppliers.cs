@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,22 +9,33 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class Products
+    public class Suppliers
     {
-        public static async Task<DTO.Response_API> enviarProducts(string token, List<DTO.Product> products)
+        public static async Task<DTO.Response_API> enviarSuppliers(string token, List<DTO.Supplier> suppliers)
         {
             try
             {
                 var retorno = new DTO.Response_API();
 
                 // Create a request using a URL that can receive a post.
-                WebRequest request = WebRequest.Create("http://Itapua.unous.com.br/StageContent/api/Product/Post/");
+                WebRequest request = WebRequest.Create("http://Itapua.unous.com.br/StageContent/api/Supplier/Post");
 
                 // Set the Method property of the request to POST.
                 request.Method = "POST";
                 request.Timeout = 100000;
 
-                string postData = JsonConvert.SerializeObject(products);
+                string postData
+                    =
+                    JsonConvert.SerializeObject
+                    (
+                        suppliers,
+                        Formatting.None,
+                        new JsonSerializerSettings
+                        {
+                            NullValueHandling = NullValueHandling.Ignore
+                        }
+                    );
+
                 byte[] byteArray = Encoding.UTF8.GetBytes(postData);
 
                 // Set the ContentType property of the WebRequest.
@@ -55,11 +65,11 @@ namespace BLL
                 StreamReader reader = new StreamReader(response.GetResponseStream());
                 string responseFromServer = reader.ReadToEnd();
 
-                retorno.statusCode          = ((HttpWebResponse)response).StatusCode.ToString();
-                retorno.statusDescription   = ((HttpWebResponse)response).StatusDescription;
-                retorno.contentType         = response.ContentType;
-                retorno.responseUri         = response.ResponseUri.ToString();
-                retorno.responseFromServer  = responseFromServer;
+                retorno.statusCode = ((HttpWebResponse)response).StatusCode.ToString();
+                retorno.statusDescription = ((HttpWebResponse)response).StatusDescription;
+                retorno.contentType = response.ContentType;
+                retorno.responseUri = response.ResponseUri.ToString();
+                retorno.responseFromServer = responseFromServer;
 
                 // Close the response.
                 response.Close();

@@ -9,7 +9,7 @@ namespace DAL
 {
     public class Products
     {
-        public static async Task<List<DTO.Product_In>> retornaProducts(DTO.Config config)
+        public static async Task<List<DTO.Product>> retornaProducts(DTO.Config config, DateTime date01, DateTime date02)
         {
             NpgsqlConnection psqlConn = new NpgsqlConnection("" +
                  "Server=" + config.server +
@@ -24,22 +24,25 @@ namespace DAL
 
             try
             {
-                var objs = new List<DTO.Product_In>();
+                var objs = new List<DTO.Product>();
 
                 await psqlConn.OpenAsync();
 
                 NpgsqlCommand cmd = new NpgsqlCommand(" select " +
                                                         " * " +
-                                                        " from unous_products " +
+                                                        " from unous_products(@date01::date, @date02::date) " +
                                                         " " +
                                                         " order by 2 desc " +
                                                         "  ", psqlConn);
+
+                cmd.Parameters.AddWithValue("@date01", date01);
+                cmd.Parameters.AddWithValue("@date02", date02);
 
                 NpgsqlDataReader dr = await cmd.ExecuteReaderAsync();
 
                 while (await dr.ReadAsync())
                 {
-                    var obj = new DTO.Product_In();
+                    var obj = new DTO.Product();
 
                     System.Reflection.PropertyInfo[] p = obj.GetType().GetProperties();
 
