@@ -1,0 +1,17 @@
+C:\Users\denne\Documents\BTA_Seta_Unous\BLL\bin\Debug\net5.0\BLL.deps.json
+C:\Users\denne\Documents\BTA_Seta_Unous\BLL\bin\Debug\net5.0\BLL.dll
+C:\Users\denne\Documents\BTA_Seta_Unous\BLL\bin\Debug\net5.0\ref\BLL.dll
+C:\Users\denne\Documents\BTA_Seta_Unous\BLL\bin\Debug\net5.0\BLL.pdb
+C:\Users\denne\Documents\BTA_Seta_Unous\BLL\obj\Debug\net5.0\BLL.csprojAssemblyReference.cache
+C:\Users\denne\Documents\BTA_Seta_Unous\BLL\obj\Debug\net5.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\denne\Documents\BTA_Seta_Unous\BLL\obj\Debug\net5.0\BLL.AssemblyInfoInputs.cache
+C:\Users\denne\Documents\BTA_Seta_Unous\BLL\obj\Debug\net5.0\BLL.AssemblyInfo.cs
+C:\Users\denne\Documents\BTA_Seta_Unous\BLL\obj\Debug\net5.0\BLL.csproj.CoreCompileInputs.cache
+C:\Users\denne\Documents\BTA_Seta_Unous\BLL\obj\Debug\net5.0\BLL.dll
+C:\Users\denne\Documents\BTA_Seta_Unous\BLL\obj\Debug\net5.0\ref\BLL.dll
+C:\Users\denne\Documents\BTA_Seta_Unous\BLL\obj\Debug\net5.0\BLL.pdb
+C:\Users\denne\Documents\BTA_Seta_Unous\BLL\bin\Debug\net5.0\DAL.dll
+C:\Users\denne\Documents\BTA_Seta_Unous\BLL\bin\Debug\net5.0\DTO.dll
+C:\Users\denne\Documents\BTA_Seta_Unous\BLL\bin\Debug\net5.0\DAL.pdb
+C:\Users\denne\Documents\BTA_Seta_Unous\BLL\bin\Debug\net5.0\DTO.pdb
+C:\Users\denne\Documents\BTA_Seta_Unous\BLL\obj\Debug\net5.0\BLL.csproj.CopyComplete

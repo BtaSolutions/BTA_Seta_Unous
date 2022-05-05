@@ -1,0 +1,15 @@
+C:\Users\denne\Documents\BTA_Seta_Unous\DAL\bin\Debug\net5.0\DAL.deps.json
+C:\Users\denne\Documents\BTA_Seta_Unous\DAL\bin\Debug\net5.0\DAL.dll
+C:\Users\denne\Documents\BTA_Seta_Unous\DAL\bin\Debug\net5.0\ref\DAL.dll
+C:\Users\denne\Documents\BTA_Seta_Unous\DAL\bin\Debug\net5.0\DAL.pdb
+C:\Users\denne\Documents\BTA_Seta_Unous\DAL\obj\Debug\net5.0\DAL.csprojAssemblyReference.cache
+C:\Users\denne\Documents\BTA_Seta_Unous\DAL\obj\Debug\net5.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\denne\Documents\BTA_Seta_Unous\DAL\obj\Debug\net5.0\DAL.AssemblyInfoInputs.cache
+C:\Users\denne\Documents\BTA_Seta_Unous\DAL\obj\Debug\net5.0\DAL.AssemblyInfo.cs
+C:\Users\denne\Documents\BTA_Seta_Unous\DAL\obj\Debug\net5.0\DAL.csproj.CoreCompileInputs.cache
+C:\Users\denne\Documents\BTA_Seta_Unous\DAL\obj\Debug\net5.0\DAL.dll
+C:\Users\denne\Documents\BTA_Seta_Unous\DAL\obj\Debug\net5.0\ref\DAL.dll
+C:\Users\denne\Documents\BTA_Seta_Unous\DAL\obj\Debug\net5.0\DAL.pdb
+C:\Users\denne\Documents\BTA_Seta_Unous\DAL\bin\Debug\net5.0\DTO.dll
+C:\Users\denne\Documents\BTA_Seta_Unous\DAL\bin\Debug\net5.0\DTO.pdb
+C:\Users\denne\Documents\BTA_Seta_Unous\DAL\obj\Debug\net5.0\DAL.csproj.CopyComplete

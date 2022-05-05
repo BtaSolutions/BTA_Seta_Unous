@@ -1,0 +1,12 @@
+C:\Users\denne\Documents\BTA_Seta_Unous\Consumo_API\obj\Debug\net5.0\Consumo_API.csprojAssemblyReference.cache
+C:\Users\denne\Documents\BTA_Seta_Unous\Consumo_API\obj\Debug\net5.0\Consumo_API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\denne\Documents\BTA_Seta_Unous\Consumo_API\obj\Debug\net5.0\Consumo_API.AssemblyInfoInputs.cache
+C:\Users\denne\Documents\BTA_Seta_Unous\Consumo_API\obj\Debug\net5.0\Consumo_API.AssemblyInfo.cs
+C:\Users\denne\Documents\BTA_Seta_Unous\Consumo_API\obj\Debug\net5.0\Consumo_API.csproj.CoreCompileInputs.cache
+C:\Users\denne\Documents\BTA_Seta_Unous\Consumo_API\bin\Debug\net5.0\Consumo_API.deps.json
+C:\Users\denne\Documents\BTA_Seta_Unous\Consumo_API\bin\Debug\net5.0\Consumo_API.dll
+C:\Users\denne\Documents\BTA_Seta_Unous\Consumo_API\bin\Debug\net5.0\ref\Consumo_API.dll
+C:\Users\denne\Documents\BTA_Seta_Unous\Consumo_API\bin\Debug\net5.0\Consumo_API.pdb
+C:\Users\denne\Documents\BTA_Seta_Unous\Consumo_API\obj\Debug\net5.0\Consumo_API.dll
+C:\Users\denne\Documents\BTA_Seta_Unous\Consumo_API\obj\Debug\net5.0\ref\Consumo_API.dll
+C:\Users\denne\Documents\BTA_Seta_Unous\Consumo_API\obj\Debug\net5.0\Consumo_API.pdb

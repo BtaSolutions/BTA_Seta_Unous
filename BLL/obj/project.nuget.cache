@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "8w4dN+M0OewmTVetD/feRPhOtqnJuHnLhzaoKlRLYkdLAzyj6bgD83UC1TzuvFdtfxJhvbl+AJUZO6S1vJSM7g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\denne\\Documents\\BTA_Seta_Unous\\BLL\\BLL.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\denne\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\denne\\.nuget\\packages\\npgsql\\6.0.4\\npgsql.6.0.4.nupkg.sha512",
+    "C:\\Users\\denne\\.nuget\\packages\\restsharp\\107.3.0\\restsharp.107.3.0.nupkg.sha512",
+    "C:\\Users\\denne\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\denne\\.nuget\\packages\\system.text.json\\5.0.0\\system.text.json.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
