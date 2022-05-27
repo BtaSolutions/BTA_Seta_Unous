@@ -77,7 +77,7 @@ namespace BTA_Seta_Unous
             }
         }
 
-        int qtde_Registros = 1000;
+        int qtde_Registros = 5000;
 
         private async void button3_Click(object sender, EventArgs e)
         {
@@ -86,9 +86,12 @@ namespace BTA_Seta_Unous
                 var tokenOut = await BLL.Token.retornaToken();
                 
                 var products = await DAL.Products.retornaProducts(BLL.Config_Sessao.config, dtpDate01.Value, dtpDate02.Value);
+                int iCount = 1;
 
                 for (int i=0; i < products.Count; i++)
                 {
+                    iCount++;
+
                     var products_Send = new  List<DTO.Product>();
 
                     for (int j=0; j < qtde_Registros; j++)
@@ -116,7 +119,6 @@ namespace BTA_Seta_Unous
                         MessageBox.Show(resposta.statusDescription);
                         MessageBox.Show(resposta.responseFromServer);
                     }
-                        
                 }
 
                 
@@ -229,6 +231,64 @@ namespace BTA_Seta_Unous
                 
                     MessageBox.Show(objResp.message.ToString(), objResp.statusReply.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        DateTime agora = DateTime.Now;
+
+        private async void btnMetric_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var tokenOut = await BLL.Token.retornaToken();
+
+                agora = DateTime.Now;
+
+                var metrics = await DAL.Metric_Data.retornaMetricData(BLL.Config_Sessao.config, dtpDate01.Value, dtpDate02.Value);
+                int iCount = 1;
+
+                for (int i = 0; i < metrics.Count; i++)
+                {
+                    iCount++;
+
+                    var objs_Send = new List<DTO.Metric_Data>();
+
+                    for (int j = 0; j < qtde_Registros; j++)
+                    {
+                        i++;
+
+                        if (i < metrics.Count)
+                        {
+                            objs_Send.Add(metrics[i]);
+                        }
+                    }
+
+                    var resposta = await BLL.Metric_Data.enviarMetricData(tokenOut.access_token, objs_Send);
+
+                    if (resposta.statusDescription != "OK")
+                    {
+                        dynamic objResp = JsonConvert.DeserializeObject(resposta.responseFromServer);
+
+                        if (Convert.ToInt32(objResp.statusReply) != 0)
+                        {
+                            MessageBox.Show(objResp.message.ToString());
+                        }
+
+                        MessageBox.Show(resposta.statusCode);
+                        MessageBox.Show(resposta.statusDescription);
+                        MessageBox.Show(resposta.responseFromServer);
+                    }
+                }
+
+                //File.WriteAllText(@"c:\bta\products.json", JsonConvert.SerializeObject(products, Formatting.Indented));
+
+                //File.WriteAllText(@"c:\bta\products_out.json", Newtonsoft.Json.JsonConvert.SerializeObject(resposta, Formatting.Indented));
+
+                MessageBox.Show("Acabou " + (DateTime.Now - agora).ToString());
             }
             catch (Exception ex)
             {

@@ -37,6 +37,7 @@ namespace BTA_Seta_Unous
             this.dtpDate02 = new System.Windows.Forms.DateTimePicker();
             this.btnSuppliers = new System.Windows.Forms.Button();
             this.btnOpenOrders = new System.Windows.Forms.Button();
+            this.btnMetric = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button2
@@ -115,11 +116,22 @@ namespace BTA_Seta_Unous
             this.btnOpenOrders.UseVisualStyleBackColor = true;
             this.btnOpenOrders.Click += new System.EventHandler(this.btnOpenOrders_Click);
             // 
+            // btnMetric
+            // 
+            this.btnMetric.Location = new System.Drawing.Point(351, 108);
+            this.btnMetric.Name = "btnMetric";
+            this.btnMetric.Size = new System.Drawing.Size(107, 48);
+            this.btnMetric.TabIndex = 9;
+            this.btnMetric.Text = "Metric Data";
+            this.btnMetric.UseVisualStyleBackColor = true;
+            this.btnMetric.Click += new System.EventHandler(this.btnMetric_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(493, 217);
+            this.Controls.Add(this.btnMetric);
             this.Controls.Add(this.btnOpenOrders);
             this.Controls.Add(this.btnSuppliers);
             this.Controls.Add(this.dtpDate02);
@@ -145,6 +157,7 @@ namespace BTA_Seta_Unous
         private System.Windows.Forms.DateTimePicker dtpDate02;
         private System.Windows.Forms.Button btnSuppliers;
         private System.Windows.Forms.Button btnOpenOrders;
+        private System.Windows.Forms.Button btnMetric;
     }
 }
 
